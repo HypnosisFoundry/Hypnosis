@@ -1,0 +1,8 @@
+{
+  "routes": [
+    { "src": "/anxiety", "dest": "/anxiety.html" },
+    { "src": "/sports-performance", "dest": "/sports.html" },
+    { "src": "/autoimmune", "dest": "/autoimmune.html" },
+    { "src": "/", "dest": "/anxiety.html" }
+  ]
+}
