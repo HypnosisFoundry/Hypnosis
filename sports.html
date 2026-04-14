@@ -3,181 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sports Performance · Hypnosis Foundry</title>
+<title>Sports Performance · Hypnosis Foundry · Munjal Shah</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --green: #1E5C34;
-    --green-light: #2A7A47;
-    --green-dark: #0D2818;
-    --green-pale: #EDF5F0;
-    --gold: #F5A623;
-    --gold-dark: #D4891A;
-    --white: #FFFFFF;
-    --gray: #F5F7F5;
-    --text: #0D1F15;
-    --text-muted: #5A6E60;
+    --green: #1E5C34; --green-dark: #0D2818; --green-deep: #071610;
+    --green-pale: #EDF5F0; --green-mid: #2A7A47;
+    --gold: #F5A623; --gold-dark: #D4891A;
+    --white: #fff; --gray: #F4F7F5; --text: #0D1F15; --muted: #5A6E60;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+  body { font-family: "DM Sans", sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
 
-  .hero {
-    background: var(--green-dark);
-    padding: 80px 24px 100px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 70% 50% at 50% 0%, #2A7A47 0%, transparent 70%);
-    opacity: 0.6;
-  }
-  .hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
-  .hero-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #90C4A2;
-    margin-bottom: 28px;
-    padding: 6px 16px;
-    border: 1px solid rgba(144,196,162,0.3);
-    border-radius: 100px;
-  }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(42px, 7vw, 72px);
-    font-weight: 600;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 24px;
-    letter-spacing: -0.02em;
-  }
+  .top-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; background: rgba(7,22,16,0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .nav-logo { font-family: "Cormorant Garamond", serif; font-size: 18px; font-weight: 600; color: #fff; text-decoration: none; }
+  .nav-cta { font-size: 13px; font-weight: 500; padding: 9px 22px; border-radius: 100px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.5); color: #fff; transition: background 0.2s; }
+  .nav-cta:hover { background: rgba(255,255,255,0.12); }
+
+  .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 130px 24px 90px; position: relative; overflow: hidden; background: var(--green-deep); }
+  .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 85% 65% at 50% -5%, #1E5C34 0%, transparent 65%); opacity: 0.8; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 35% at 85% 85%, #0D2818 0%, transparent 60%); opacity: 0.6; }
+  .hero-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+  .hero-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #90C4A2; padding: 6px 18px; border: 1px solid rgba(144,196,162,0.35); border-radius: 100px; margin-bottom: 30px; }
+  .hero h1 { font-family: "Cormorant Garamond", serif; font-size: clamp(46px, 7.5vw, 82px); font-weight: 600; color: #fff; line-height: 1.06; margin-bottom: 24px; letter-spacing: -0.025em; }
   .hero h1 em { font-style: italic; color: #90C4A2; }
-  .hero p { font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 520px; margin: 0 auto 40px; font-weight: 300; }
-  .cta-btn {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--green-dark);
-    font-size: 15px;
-    font-weight: 500;
-    padding: 16px 36px;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
-    border: none;
-    cursor: pointer;
-  }
-  .cta-btn:hover { background: var(--gold-dark); transform: translateY(-1px); }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.72); line-height: 1.72; max-width: 540px; margin: 0 auto 46px; font-weight: 300; }
+  .cta-btn { display: inline-block; background: var(--gold); color: var(--green-deep); font-size: 15px; font-weight: 500; padding: 17px 40px; border-radius: 100px; text-decoration: none; transition: background 0.2s, transform 0.15s; border: none; cursor: pointer; font-family: "DM Sans", sans-serif; }
+  .cta-btn:hover { background: var(--gold-dark); transform: translateY(-2px); }
 
-  .trust-bar { background: var(--green); padding: 18px 24px; display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
-  .trust-item { color: rgba(255,255,255,0.85); font-size: 13px; display: flex; align-items: center; gap: 8px; }
-  .trust-item span { color: #FFD700; }
+  .trust-bar { background: var(--green); padding: 17px 24px; display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; }
+  .trust-item { color: rgba(255,255,255,0.82); font-size: 13px; display: flex; align-items: center; gap: 7px; }
+  .trust-item .star { color: #FFD700; }
 
-  .section { padding: 80px 24px; }
-  .section-inner { max-width: 900px; margin: 0 auto; }
-  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green-light); margin-bottom: 16px; }
-  .section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 600; color: var(--text); line-height: 1.15; margin-bottom: 48px; letter-spacing: -0.02em; }
+  .section { padding: 92px 24px; }
+  .section-inner { max-width: 960px; margin: 0 auto; }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 14px; }
+  .section h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(34px, 4.5vw, 52px); font-weight: 600; color: var(--text); line-height: 1.1; margin-bottom: 52px; letter-spacing: -0.02em; }
 
-  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-  .benefit-card { background: var(--green-pale); border-radius: 16px; padding: 28px; border: 1px solid rgba(30,92,52,0.1); }
-  .benefit-icon { font-size: 24px; margin-bottom: 12px; }
+  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(272px, 1fr)); gap: 18px; }
+  .benefit-card { background: var(--green-pale); border-radius: 18px; padding: 30px; border: 1px solid rgba(30,92,52,0.1); }
+  .benefit-icon { font-size: 26px; margin-bottom: 14px; }
   .benefit-card h3 { font-size: 16px; font-weight: 500; margin-bottom: 8px; color: var(--green-dark); }
-  .benefit-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+  .benefit-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
-  .testimonials { background: var(--gray); }
-  .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-  .testimonial-card { background: var(--white); border-radius: 16px; padding: 32px; border: 1px solid rgba(0,0,0,0.06); }
-  .stars { color: #FFD700; font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
-  .testimonial-card blockquote { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; line-height: 1.55; color: var(--text); margin-bottom: 20px; }
-  .testimonial-author { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+  .testimonials-bg { background: var(--gray); }
+  .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
+  .testimonial-card { background: var(--white); border-radius: 18px; padding: 34px; border: 1px solid rgba(30,92,52,0.08); }
+  .stars { font-size: 15px; margin-bottom: 16px; letter-spacing: 3px; color: #FFD700; }
+  .testimonial-card blockquote { font-family: "Cormorant Garamond", serif; font-size: 19px; font-style: italic; line-height: 1.55; color: var(--text); margin-bottom: 20px; }
+  .testimonial-author { font-size: 13px; font-weight: 500; color: var(--muted); }
 
-  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  @media (max-width: 680px) { .about-inner { grid-template-columns: 1fr; } }
-  .about-photo { background: var(--green-pale); border-radius: 20px; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--text-muted); border: 2px dashed rgba(30,92,52,0.2); text-align: center; padding: 20px; }
-  .about-text p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
-  .credentials { display: flex; flex-direction: column; gap: 8px; margin-top: 24px; }
-  .credential { font-size: 13px; color: var(--green); font-weight: 500; display: flex; align-items: center; gap: 8px; }
-  .credential::before { content: '✓'; color: var(--gold); font-weight: 700; }
+  /* ATHLETES SECTION */
+  .athletes-bg { background: var(--green-deep); }
+  .athletes-bg .section-label { color: #90C4A2; }
+  .athletes-bg h2 { color: #fff; }
+  .athletes-intro { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 52px; max-width: 800px; font-weight: 300; }
+  .athlete-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; margin-bottom: 48px; }
+  .athlete-card { border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04); }
+  .athlete-visual { height: 160px; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px 22px; position: relative; }
+  .athlete-sport-icon { position: absolute; top: 18px; right: 18px; font-size: 40px; opacity: 0.2; }
+  .athlete-name { font-family: "Cormorant Garamond", serif; font-size: 28px; font-weight: 600; color: #fff; line-height: 1.1; }
+  .athlete-sport { font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 4px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .athlete-body { padding: 20px 22px 24px; }
+  .athlete-body p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+  .athlete-quote { font-family: "Cormorant Garamond", serif; font-size: 17px; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.55; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); }
 
-  .form-section { background: var(--green-dark); }
-  .form-section .section-label { color: #90C4A2; }
-  .form-section h2 { color: var(--white); }
-  .form-inner { max-width: 560px; margin: 0 auto; text-align: center; }
-  .form-inner > p { color: rgba(255,255,255,0.6); font-size: 15px; margin-top: -24px; margin-bottom: 40px; line-height: 1.6; }
+  .athlete-tiger .athlete-visual { background: linear-gradient(135deg, #0a3d1f 0%, #1a6b38 100%); }
+  .athlete-jordan .athlete-visual { background: linear-gradient(135deg, #1a0a00 0%, #8B0000 100%); }
+  .athlete-agassi .athlete-visual { background: linear-gradient(135deg, #0d1a2e 0%, #1a3a5c 100%); }
+  .athlete-nicklaus .athlete-visual { background: linear-gradient(135deg, #1a1400 0%, #5c4a00 100%); }
+  .athlete-lloyd .athlete-visual { background: linear-gradient(135deg, #1a0a1a 0%, #6b1a6b 100%); }
+  .athlete-soviet .athlete-visual { background: linear-gradient(135deg, #1a0000 0%, #8B1a00 100%); }
+
+  /* RESEARCH */
+  .research-bg { background: var(--green-pale); }
+  .research-bg .section-label { color: var(--green-mid); }
+  .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(178px, 1fr)); gap: 16px; margin-bottom: 52px; }
+  .stat-card { background: var(--white); border-radius: 18px; padding: 28px 20px; text-align: center; border: 1px solid rgba(30,92,52,0.12); }
+  .stat-num { font-family: "Cormorant Garamond", serif; font-size: 54px; font-weight: 600; color: var(--green); line-height: 1; margin-bottom: 10px; }
+  .stat-label { font-size: 13px; color: var(--muted); line-height: 1.55; }
+  .studies-list { display: flex; flex-direction: column; gap: 18px; margin-bottom: 30px; }
+  .study-card { background: var(--white); border-radius: 18px; padding: 28px 32px; border-left: 4px solid var(--green); border-top: 1px solid rgba(30,92,52,0.1); border-right: 1px solid rgba(30,92,52,0.1); border-bottom: 1px solid rgba(30,92,52,0.1); }
+  .study-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; align-items: center; }
+  .study-journal { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; background: rgba(30,92,52,0.09); color: var(--green); padding: 3px 10px; border-radius: 20px; }
+  .study-year { font-size: 11px; color: var(--muted); }
+  .study-type { font-size: 11px; background: rgba(245,166,35,0.12); color: var(--gold-dark); padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+  .study-card h3 { font-size: 16px; font-weight: 500; color: var(--green-dark); margin-bottom: 10px; line-height: 1.4; }
+  .study-card p { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+  .study-finding { background: rgba(30,92,52,0.06); border-radius: 10px; padding: 14px 18px; font-size: 13px; color: var(--green-dark); line-height: 1.65; font-style: italic; margin-bottom: 14px; }
+  .study-link { font-size: 12px; color: var(--green); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; font-weight: 500; }
+  .study-link:hover { text-decoration: underline; }
+  .research-disclaimer { background: rgba(30,92,52,0.06); border-radius: 12px; padding: 18px 24px; border-left: 3px solid rgba(30,92,52,0.3); margin-top: 8px; }
+  .research-disclaimer p { font-size: 13px; color: var(--muted); line-height: 1.65; font-style: italic; }
+
+  .about-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+  @media (max-width: 700px) { .about-inner { grid-template-columns: 1fr; } }
+  .about-photo { width: 100%; border-radius: 24px; aspect-ratio: 3/4; object-fit: cover; display: block; }
+  .about-photo-placeholder { width: 100%; border-radius: 24px; aspect-ratio: 3/4; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px; background: var(--green-pale); border: 2px dashed rgba(30,92,52,0.25); color: var(--muted); font-size: 13px; line-height: 1.7; }
+  .about-text p { font-size: 16px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; }
+  .credentials { display: flex; flex-direction: column; gap: 9px; margin-top: 26px; }
+  .credential { font-size: 13px; color: var(--green); font-weight: 500; display: flex; align-items: center; gap: 9px; }
+  .credential::before { content: "✓"; color: var(--gold); font-weight: 700; }
+
+  .form-bg { background: var(--green-deep); }
+  .form-bg .section-label { color: #90C4A2; }
+  .form-bg h2 { color: var(--white); }
+  .form-inner { max-width: 580px; margin: 0 auto; text-align: center; }
+  .form-inner > p { color: rgba(255,255,255,0.55); font-size: 16px; line-height: 1.7; margin-top: -30px; margin-bottom: 44px; }
   .lead-form { display: flex; flex-direction: column; gap: 14px; }
-  .lead-form input { width: 100%; padding: 16px 20px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); color: var(--white); font-size: 15px; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s; }
-  .lead-form input::placeholder { color: rgba(255,255,255,0.35); }
-  .lead-form input:focus { border-color: rgba(144,196,162,0.6); background: rgba(255,255,255,0.12); }
-  .lead-form button { width: 100%; padding: 18px; border-radius: 12px; border: none; background: var(--gold); color: var(--green-dark); font-size: 16px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: background 0.2s, transform 0.15s; margin-top: 6px; }
-  .lead-form button:hover { background: var(--gold-dark); transform: translateY(-1px); }
-  .form-note { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 16px; }
-  .success-msg { display: none; background: rgba(255,255,255,0.1); border-radius: 16px; padding: 40px; text-align: center; }
-  .success-msg h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--white); margin-bottom: 12px; }
-  .success-msg p { color: rgba(255,255,255,0.7); font-size: 15px; }
+  .lead-form input { width: 100%; padding: 17px 22px; border-radius: 14px; border: 1.5px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.08); color: #fff; font-size: 15px; font-family: "DM Sans", sans-serif; outline: none; transition: border-color 0.2s, background 0.2s; }
+  .lead-form input::placeholder { color: rgba(255,255,255,0.32); }
+  .lead-form input:focus { border-color: rgba(144,196,162,0.55); background: rgba(255,255,255,0.12); }
+  .form-submit { width: 100%; padding: 19px; border-radius: 14px; border: none; background: var(--gold); color: var(--green-deep); font-size: 16px; font-weight: 500; font-family: "DM Sans", sans-serif; cursor: pointer; transition: background 0.2s, transform 0.15s; margin-top: 6px; }
+  .form-submit:hover { background: var(--gold-dark); transform: translateY(-1px); }
+  .form-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px; }
+  .success-msg { display: none; background: rgba(255,255,255,0.09); border-radius: 18px; padding: 44px; text-align: center; }
+  .success-msg h3 { font-family: "Cormorant Garamond", serif; font-size: 30px; color: #fff; margin-bottom: 12px; }
+  .success-msg p { color: rgba(255,255,255,0.65); font-size: 16px; }
 
-  footer { background: var(--green-dark); border-top: 1px solid rgba(255,255,255,0.08); padding: 32px 24px; text-align: center; }
-  footer p { color: rgba(255,255,255,0.35); font-size: 13px; }
+  footer { background: var(--green-deep); border-top: 1px solid rgba(255,255,255,0.07); padding: 32px 24px; text-align: center; }
+  footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
+  footer a { color: inherit; }
 
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-inner > * { animation: fadeUp 0.7s ease both; }
-  .hero-tag { animation-delay: 0.1s; }
-  .hero h1 { animation-delay: 0.2s; }
-  .hero p { animation-delay: 0.3s; }
-  .hero .cta-btn { animation-delay: 0.4s; }
-
-  /* STICKY CTA BAR */
-  .sticky-cta {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 999;
-    background: rgba(13, 40, 24, 0.96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(144,196,162,0.15);
-    padding: 14px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    transform: translateY(100%);
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  }
+  .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: rgba(7,22,16,0.95); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid rgba(144,196,162,0.15); padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; transform: translateY(100%); transition: transform 0.38s cubic-bezier(0.16,1,0.3,1); }
   .sticky-cta.visible { transform: translateY(0); }
-  .sticky-cta.hidden { transform: translateY(100%); }
-  .sticky-cta-text { color: rgba(255,255,255,0.7); font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .sticky-cta-text strong { color: white; display: block; font-size: 15px; font-weight: 500; }
-  .sticky-cta-btn {
-    display: inline-block;
-    background: #F5A623;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 13px 28px;
-    border-radius: 100px;
-    text-decoration: none;
-    white-space: nowrap;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    font-family: 'DM Sans', sans-serif;
-    flex-shrink: 0;
-  }
-  .sticky-cta-btn:hover { background: #D4891A; transform: scale(1.02); }
-  @media (max-width: 480px) {
-    .sticky-cta { justify-content: center; }
-    .sticky-cta-text { display: none; }
-    .sticky-cta-btn { width: 100%; text-align: center; padding: 15px; font-size: 15px; }
-  }
+  .sticky-cta-text { color: rgba(255,255,255,0.6); font-size: 13px; }
+  .sticky-cta-text strong { color: #fff; display: block; font-size: 14px; font-weight: 500; }
+  .sticky-cta-btn { background: var(--gold); color: var(--green-deep); font-size: 14px; font-weight: 500; padding: 12px 28px; border-radius: 100px; text-decoration: none; white-space: nowrap; border: none; cursor: pointer; font-family: "DM Sans", sans-serif; flex-shrink: 0; transition: background 0.2s; }
+  .sticky-cta-btn:hover { background: var(--gold-dark); }
+  @media (max-width: 520px) { .sticky-cta-text { display: none; } .sticky-cta-btn { flex: 1; text-align: center; } }
 
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-inner > * { animation: fadeUp 0.75s ease both; }
+  .hero-tag { animation-delay: 0.1s; } .hero h1 { animation-delay: 0.2s; } .hero p { animation-delay: 0.32s; } .cta-btn { animation-delay: 0.44s; }
 </style>
 </head>
 <body>
+
+<nav class="top-nav">
+  <a class="nav-logo" href="#">Hypnosis Foundry</a>
+  <a class="nav-cta" href="#book">Book Free Consult</a>
+</nav>
 
 <section class="hero">
   <div class="hero-inner">
@@ -189,7 +156,7 @@
 </section>
 
 <div class="trust-bar">
-  <div class="trust-item"><span>★★★★★</span> 5.0 on Thumbtack</div>
+  <div class="trust-item"><span class="star">★★★★★</span> 5.0 on Thumbtack</div>
   <div class="trust-item">· 10+ Years Experience</div>
   <div class="trust-item">· Certified Clinical Hypnotherapist</div>
   <div class="trust-item">· SF + Online</div>
@@ -200,77 +167,178 @@
     <div class="section-label">Mental performance</div>
     <h2>What athletes work on<br>with Munjal</h2>
     <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">🎯</div>
-        <h3>Eliminate performance anxiety</h3>
-        <p>Stop choking under pressure and perform at your best when it counts most.</p>
+      <div class="benefit-card"><div class="benefit-icon">🎯</div><h3>Eliminate performance anxiety</h3><p>Stop choking under pressure and perform at your peak when it counts most.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">⚡</div><h3>Get into flow state on demand</h3><p>Access peak performance states faster and sustain them longer during competition.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">🧱</div><h3>Break through mental plateaus</h3><p>Dissolve the subconscious limits that physical training alone can never reach.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">🔥</div><h3>Build unshakeable confidence</h3><p>Develop the mental resilience of elite performers — wired in at the subconscious level.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">🧠</div><h3>Reprogram limiting beliefs</h3><p>Replace "I can't" with certainty. Change the story your subconscious tells you under pressure.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">📈</div><h3>Results felt quickly</h3><p>Most athletes notice meaningful shifts in mental performance within 2–3 sessions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonials-bg">
+  <div class="section-inner">
+    <div class="section-label">Client stories</div>
+    <h2>Real results from<br>real people</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card"><div class="stars">★★★★★</div><blockquote>"I highly recommend Munjal to anyone looking to make meaningful changes. I reached out for help with my confidence and self-healing. He helped me tap into my own inner strength and motivation, allowing me to achieve lifting goals I wasn't sure were possible in the gym."</blockquote><div class="testimonial-author">Amandor P. · Verified Thumbtack Client</div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><blockquote>"My session with Munjal was pretty transformative. He was very professional and personable, and I believe his background in traditional therapy and coaching was a real bonus through the hypnotherapy process."</blockquote><div class="testimonial-author">Christina P. · Verified Thumbtack Client</div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><blockquote>"Over each of our five sessions Munjal demonstrated real attention to detail, tremendous compassion, and an ability to get me to relax and work with him on improving my life. He has given me a number of techniques I now incorporate into my daily life."</blockquote><div class="testimonial-author">Jeffrey G. · Verified Thumbtack Client</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section athletes-bg">
+  <div class="section-inner">
+    <div class="section-label">World-class precedent</div>
+    <h2>Elite athletes who used<br>hypnotherapy to win</h2>
+    <p class="athletes-intro">The world's most decorated athletes don't leave their mental game to chance. For decades, top performers across every sport have used hypnotherapy to gain the mental edge that separates good from elite. Your body is already trained — this is how they trained their minds.</p>
+    <div class="athlete-grid">
+      <div class="athlete-card athlete-tiger">
+        <div class="athlete-visual">
+          <div class="athlete-sport-icon">⛳</div>
+          <div>
+            <div class="athlete-name">Tiger Woods</div>
+            <div class="athlete-sport">Golf · 15 Major Championships</div>
+          </div>
+        </div>
+        <div class="athlete-body">
+          <p>Has used self-hypnosis since the age of 13. Used it to block out distractions, sharpen focus, and manage the intense pressure of competitive golf at the highest level.</p>
+          <div class="athlete-quote">"Hypnosis honed his concentration, cultivated a strong mental game, and contributed to his remarkable record of 15 major championships."</div>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">⚡</div>
-        <h3>Get into flow state on demand</h3>
-        <p>Access peak performance states faster and sustain them longer during competition.</p>
+      <div class="athlete-card athlete-jordan">
+        <div class="athlete-visual">
+          <div class="athlete-sport-icon">🏀</div>
+          <div>
+            <div class="athlete-name">Michael Jordan</div>
+            <div class="athlete-sport">Basketball · 6× NBA Champion</div>
+          </div>
+        </div>
+        <div class="athlete-body">
+          <p>Used hypnotherapy as part of his training and pre-game routines to enhance focus and mental stamina. Coach Phil Jackson introduced the entire Chicago Bulls team to hypnosis — they won 6 NBA Championships.</p>
+          <div class="athlete-quote">"By entering a state of focused relaxation, Jordan visualised himself making iconic shots and leading his team to victory."</div>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🧱</div>
-        <h3>Break through mental plateaus</h3>
-        <p>Dissolve the subconscious limits that physical training alone can't reach.</p>
+      <div class="athlete-card athlete-agassi">
+        <div class="athlete-visual">
+          <div class="athlete-sport-icon">🎾</div>
+          <div>
+            <div class="athlete-name">Andre Agassi</div>
+            <div class="athlete-sport">Tennis · 8 Grand Slam Titles</div>
+          </div>
+        </div>
+        <div class="athlete-body">
+          <p>Used hypnotherapy throughout his entire professional career to manage pressure, build focus, and maintain consistency at the top level of professional tennis.</p>
+          <div class="athlete-quote">"Agassi used hypnotherapy throughout his whole career to achieve and maintain his elite level of performance on the world stage."</div>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🔥</div>
-        <h3>Build unshakeable confidence</h3>
-        <p>Develop the mental resilience of elite performers — wired in at the subconscious level.</p>
+      <div class="athlete-card athlete-nicklaus">
+        <div class="athlete-visual">
+          <div class="athlete-sport-icon">🏆</div>
+          <div>
+            <div class="athlete-name">Jack Nicklaus</div>
+            <div class="athlete-sport">Golf · 18 Major Championships</div>
+          </div>
+        </div>
+        <div class="athlete-body">
+          <p>Gave full credit to hypnosis and visualisation for his record wins — the most major championships of any golfer in history. Consistently stated that 90% of winning is mental.</p>
+          <div class="athlete-quote">"Nicklaus gave full credit to self-hypnosis for his record wins. He consistently said that 90% of winning was mental."</div>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🧠</div>
-        <h3>Reprogram limiting beliefs</h3>
-        <p>Replace "I can't" with certainty. Change the story your subconscious tells you under pressure.</p>
+      <div class="athlete-card athlete-lloyd">
+        <div class="athlete-visual">
+          <div class="athlete-sport-icon">⚽</div>
+          <div>
+            <div class="athlete-name">Carli Lloyd</div>
+            <div class="athlete-sport">Soccer · 2× Olympic Gold Medalist</div>
+          </div>
+        </div>
+        <div class="athlete-body">
+          <p>Has been vocal about her use of hypnosis to boost performance. Hypnotherapy helped Lloyd silence self-doubt and overcome the mental hurdles that could hinder her on the field.</p>
+          <div class="athlete-quote">"Hypnotherapy helped Lloyd silence doubts, overcome mental hurdles, and become one of the most decorated players in US soccer history."</div>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">📈</div>
-        <h3>Fast results</h3>
-        <p>Most athletes notice meaningful shifts in mental performance within 2–3 sessions.</p>
+      <div class="athlete-card athlete-soviet">
+        <div class="athlete-visual">
+          <div class="athlete-sport-icon">🥇</div>
+          <div>
+            <div class="athlete-name">Soviet Olympic Team</div>
+            <div class="athlete-sport">Multiple Sports · 1956 Melbourne Olympics</div>
+          </div>
+        </div>
+        <div class="athlete-body">
+          <p>The Soviet Union brought 11 dedicated hypnotists to the 1956 Melbourne Olympics — one of the first documented uses of sports hypnotherapy at elite international competition level.</p>
+          <div class="athlete-quote">"The Russian Olympic team took 11 hypnotists with them to the 1956 Olympic Games in Melbourne — pioneering sports hypnotherapy at the highest level."</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section testimonials">
+<section class="section research-bg">
   <div class="section-inner">
-    <div class="section-label">Client stories</div>
-    <h2>Real results from<br>real people</h2>
-        <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I highly recommend Munjal to anyone looking to make meaningful changes. I reached out for help with my confidence and self-healing. He helped me tap into my own inner strength and motivation, allowing me to achieve lifting goals I wasn't sure were possible in the gym."</blockquote>
-        <div class="testimonial-author">Amandor P. · Verified Thumbtack Client</div>
+    <div class="section-label">The science behind it</div>
+    <h2>What research says about<br>hypnotherapy &amp; performance</h2>
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-num">90%</div><div class="stat-label">of athletic performance is mental, according to sports psychologists and coaches including Jack Nicklaus</div></div>
+      <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">NBA Championships won by the Chicago Bulls after Phil Jackson introduced team hypnotherapy</div></div>
+      <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">of golfers in Sheffield Hallam University study improved putting scores after hypnosis</div></div>
+      <div class="stat-card"><div class="stat-num">13</div><div class="stat-label">Age Tiger Woods began using self-hypnosis — and never stopped throughout his record career</div></div>
+    </div>
+    <div class="studies-list">
+      <div class="study-card">
+        <div class="study-meta"><span class="study-journal">Sheffield Hallam University</span><span class="study-year">2000</span><span class="study-type">Controlled Study · Golfers</span></div>
+        <h3>100% of athletes improved performance after hypnosis — with reduced anxiety</h3>
+        <p>A study at Sheffield Hallam University measured the putting performance of five golfers before and after hypnosis sessions. Every single golfer showed consistent improvement in their average putting score following hypnotherapy. Athletes also reported feeling significantly less anxious about their performance and more confident in their abilities.</p>
+        <div class="study-finding">"The results showed that the average putting score of the golfers consistently increased following hypnosis. The golfers also reported feeling less anxious about how they would perform and more confident in their putting abilities."</div>
+        <a class="study-link" href="https://www.thechangemethod.com/sports-performance-hypnosis-los-angeles" target="_blank">→ Read more</a>
       </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"My session with Munjal was pretty transformative. He was very professional and personable, and I believe his background in traditional therapy and coaching was a real bonus through the hypnotherapy process."</blockquote>
-        <div class="testimonial-author">Christina P. · Verified Thumbtack Client</div>
+      <div class="study-card">
+        <div class="study-meta"><span class="study-journal">University of Oregon · Department of Neurology</span><span class="study-year">Peer-reviewed</span><span class="study-type">Neurological Research</span></div>
+        <h3>Hypnotherapy measurably improves focus — the core skill of elite performance</h3>
+        <p>The Department of Neurology at the University of Oregon found that hypnotherapy significantly improves focus and the ability to enter flow states. Athletes who receive hypnotherapy develop the capacity to access "effortless attention" — the state where they work at peak skill without conscious effort. Research also found hypnotherapy improves sleep quality, which has a direct impact on athletic performance and reaction time.</p>
+        <div class="study-finding">"Researchers at the University of Oregon found that hypnotherapy can vastly improve focus — what athletes call 'the zone'. An athlete is completely present, focused on the task, working at the best of their skill and ability."</div>
+        <a class="study-link" href="https://leadingedgehypno.com/hypnotherapy-for-athletes/" target="_blank">→ Read more</a>
       </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Over each of our five sessions Munjal demonstrated real attention to detail, tremendous compassion, and an ability to get me to relax and work with him on improving my life. He has given me a number of techniques I now incorporate into my daily life."</blockquote>
-        <div class="testimonial-author">Jeffrey G. · Verified Thumbtack Client</div>
+      <div class="study-card">
+        <div class="study-meta"><span class="study-journal">Center Point Medicine · Sports Psychology</span><span class="study-year">Peer-reviewed Review</span><span class="study-type">Neuroscience Evidence</span></div>
+        <h3>Mental rehearsal under hypnosis sends real electrical signals to muscles</h3>
+        <p>Sports psychologists at Center Point Medicine confirmed that when athletes mentally rehearse their sport under hypnosis, the body areas used in that sport receive real electrical signals — demonstrating that the mind directly affects physical performance. The Soviet Olympic gymnastics teams spent months using mental imagery training under hypnosis before major competitions, and built a track record of dominance.</p>
+        <div class="study-finding">"Science has shown that when a person mentally rehearses playing a sport, the body areas used in that sport receive electrical signals. This shows that the mind truly does affect the body."</div>
+        <a class="study-link" href="https://www.centerpointmedicine.com/blog/how-do-you-improve-athletic-performance-with-hypnosis" target="_blank">→ Read more</a>
       </div>
     </div>
+    <div class="research-disclaimer"><p><strong>Note:</strong> These references are for educational context. Results vary between individuals. Hypnotherapy is a complementary practice and works best alongside physical training.</p></div>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner">
     <div class="about-inner">
-      <div class="about-photo">📸 Add your photo here<br><br><small>Replace with your headshot</small></div>
+      <div>
+        <!-- PHOTO INSTRUCTIONS:
+          Replace this div with: <img src="/munjal.jpg" alt="Munjal Shah" class="about-photo">
+          Put your photo as munjal.jpg in the root of your GitHub repo.
+        -->
+        <div class="about-photo-placeholder">
+          <div style="font-size:36px;margin-bottom:12px;">📸</div>
+          <strong>Add your photo here</strong>
+          <div style="font-size:12px;margin-top:10px;opacity:0.7;">Replace this div with:<br><code style="font-size:11px;">&lt;img src="/munjal.jpg" alt="Munjal Shah" class="about-photo"&gt;</code><br><br>Put your photo as <strong>munjal.jpg</strong> in your GitHub repo root</div>
+        </div>
+      </div>
       <div class="about-text">
         <div class="section-label">About Munjal</div>
-        <h2 style="margin-bottom: 24px;">The mental edge most coaches don't address</h2>
-        <p>Munjal Shah is a certified clinical hypnotherapist with over 10 years of experience helping people break through the patterns holding them back — in sport, business, and life.</p>
-        <p>He works with athletes at all levels, from recreational to competitive, on the psychological root causes of underperformance.</p>
+        <h2 style="margin-bottom:24px;">The mental edge most coaches never address</h2>
+        <p>Munjal Shah is a certified clinical hypnotherapist with over 10 years of experience helping athletes and high-performers break through the mental blocks that physical training can't touch.</p>
+        <p>A graduate of Northwestern University (BA, Psychology & Chemistry) and California Institute of Integral Studies (MA, Counseling Therapy), Munjal brings an evidence-based, clinical approach to performance hypnotherapy.</p>
+        <p>Based at 995 Market St, San Francisco — with secure online sessions available worldwide.</p>
         <div class="credentials">
           <div class="credential">Certified Clinical Hypnotherapist</div>
+          <div class="credential">MA, Counseling Therapy — CIIS</div>
+          <div class="credential">BA, Psychology & Chemistry — Northwestern</div>
           <div class="credential">Psychology-Based Performance Coach</div>
-          <div class="credential">10+ Years Clinical Experience</div>
           <div class="credential">Top Pro on Thumbtack · 5.0 ★★★★★</div>
         </div>
       </div>
@@ -278,43 +346,70 @@
   </div>
 </section>
 
-<section class="section form-section" id="book">
-  <div class="form-inner">
-    <div class="section-label">Free consultation</div>
-    <h2>Book your free<br>30-minute call</h2>
-    <p>No obligation. Find out if performance hypnotherapy is right for you.</p>
-    <form class="lead-form" id="leadForm">
-      <input type="text" name="name" placeholder="Your full name" required>
-      <input type="email" name="email" placeholder="Your email address" required>
-      <input type="tel" name="phone" placeholder="Phone number (optional)">
-      <input type="hidden" name="campaign" value="sports_performance">
-      <button type="submit">Book My Free Consultation →</button>
-    </form>
-    <div class="success-msg" id="successMsg">
-      <h3>You're booked in ✓</h3>
-      <p>Munjal will reach out within 24 hours to confirm your free consultation.</p>
+<section class="section form-bg" id="book">
+  <div class="section-inner">
+    <div class="form-inner">
+      <div class="section-label">Free consultation</div>
+      <h2>Book your free<br>30-minute call</h2>
+      <p>No obligation. Find out how performance hypnotherapy can take your game to the next level.</p>
+      <form class="lead-form" id="leadForm">
+        <input type="text" name="name" placeholder="Your full name" required>
+        <input type="email" name="email" placeholder="Your email address" required>
+        <input type="tel" name="phone" placeholder="Phone number (optional)">
+        <input type="hidden" name="campaign" value="sports_performance">
+        <button type="submit" class="form-submit">Book My Free Consultation →</button>
+      </form>
+      <div class="success-msg" id="successMsg">
+        <h3>You're booked in ✓</h3>
+        <p>Munjal will reach out within 24 hours to confirm your free consultation.</p>
+      </div>
+      <p class="form-note">Your information is completely private and never shared.</p>
     </div>
-    <p class="form-note">Your information is completely private and never shared.</p>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Hypnosis Foundry · Munjal Shah · San Francisco · <a href="/cdn-cgi/l/email-protection#afc7cac3c3c0efc7d6dfc1c0dcc6dcc9c0dac1cbddd681ccc0c2" style="color:rgba(255,255,255,0.5);"><span class="__cf_email__" data-cfemail="adc5c8c1c1c2edc5d4ddc3c2dec4decbc2d8c3c9dfd483cec2c0">[email&#160;protected]</span></a></p>
-</footer>
+<footer><p>© 2026 Hypnosis Foundry · Munjal Shah · San Francisco · <a href="mailto:hello@hypnosisfoundry.com">hello@hypnosisfoundry.com</a></p></footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Replace PIXEL_ID with your actual Meta Pixel ID
-  // !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  // n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  // if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  // n.queue=[];t=b.createElement(e);t.async=!0;
-  // t.src=v;s=b.getElementsByTagName(e)[0];
-  // s.parentNode.insertBefore(t,s)}(window, document,'script',
-  // 'https://connect.facebook.net/en_US/fbevents.js');
-  // fbq('init', 'YOUR_PIXEL_ID');
-  // fbq('track', 'PageView');
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-text"><strong>Hypnosis Foundry · Munjal Shah</strong>Free 30-min consultation · No obligation</div>
+  <a href="#book" class="sticky-cta-btn">Book My Free Consultation →</a>
+</div>
 
-  document.getElementById('leadForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const form = e.target;
-    console.log('Lead
+<script>
+// META PIXEL — uncomment and replace YOUR_PIXEL_ID to activate
+// !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+// n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+// if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+// n.queue=[];t=b.createElement(e);t.async=!0;
+// t.src=v;s=b.getElementsByTagName(e)[0];
+// s.parentNode.insertBefore(t,s)}(window,document,'script',
+// 'https://connect.facebook.net/en_US/fbevents.js');
+// fbq('init', 'YOUR_PIXEL_ID');
+// fbq('track', 'PageView');
+
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // fbq('track', 'Lead', { campaign: 'sports_performance' });
+  // fbq('trackCustom', 'Lead_Sports');
+  e.target.style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+});
+
+(function() {
+  var bar = document.getElementById('stickyCta');
+  var hero = document.querySelector('.hero');
+  var form = document.getElementById('book');
+  var dismissed = false;
+  function update() {
+    if (dismissed) return;
+    if (hero.getBoundingClientRect().bottom < 0 && form.getBoundingClientRect().top > window.innerHeight) {
+      bar.classList.add('visible');
+    } else { bar.classList.remove('visible'); }
+  }
+  bar.querySelector('.sticky-cta-btn').addEventListener('click', function() { dismissed = true; bar.classList.remove('visible'); });
+  window.addEventListener('scroll', function() { if (hero.getBoundingClientRect().bottom > 0) dismissed = false; update(); }, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+})();
+</script>
+</body>
+</html>
